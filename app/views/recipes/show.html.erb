@@ -1,5 +1,10 @@
 <h1><%= @recipe.name%></h1>
 
-<p><%= @recipe.author%></p>
-<p><%= @recipe.ingredients%></p>
-<p><%= @recipe.instructions%></p>
+<p>Author: <%= @recipe.author%></p>
+<p>Ingredients: <%= @recipe.ingredients%></p>
+<p>Instructions: <%= @recipe.instructions%></p>
+
+
+<p><a href="/recipes/<%=@recipe.id%>/edit" class="btn btn-info">Update this Recipe</a></p>
+<p><a href="/recipes" class="btn btn-primary"> Return to recipe listing</a></p>
+

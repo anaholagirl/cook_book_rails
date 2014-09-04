@@ -2,7 +2,7 @@
 
 <%= render('layouts/errors', :object => @recipe) %>
 
-<form action="/recipes" method="post">
+<form action="/recipes/" method="post">
   <%=render('form') %>
-  <button> Create Recipe </button>
+  <button class="btn btn-primary"> Create Recipe </button>
 </form>

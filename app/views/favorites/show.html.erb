@@ -1,2 +1,11 @@
 <h1><%= @tag.name %> </h1>
 
+<ul>
+  <% @tag.recipes.each do |recipe| %>
+  <li><a href="/recipes/<%= recipe.id %>"><%= recipe.name %></a></li>
+  <% end %>
+</ul>
+
+<p><a href="/favorites/view" class="btn btn-primary">Return to tag listings </a></p>
+<p><a href="/favorites" class="btn btn-success"> Return to menu</a></p>
+

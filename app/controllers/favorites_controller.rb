@@ -4,30 +4,37 @@ class FavoritesController <ApplicationController
     render('favorites/index.html.erb')
   end
 
-  def main
-    render('home/index.html.erb')
-  end
-
   def new
+    @recipes = Recipe.all
+    @tags = Tag.all
     @favorite = Favorite.new
     render('favorites/new.html.erb')
   end
 
-  # def create
-  #   @recipe = Recipe.new(params[:recipe])
+  def create
+    @recipes = Recipe.all
+    @tags = Tag.all
+    @favorite = Favorite.new(params[:favorite])
 
-  #   if @recipe.save
-  #     flash[:notice]= "Your recipe was added to the Joy of Cooking!!"
-  #     render('recipes/success.html.erb')
-  #   else
-  #     render('recipes/new.html.erb')
-  #   end
-  # end
+    if @favorite.save
+      flash[:notice]= "You've tagged a recipe!"
+      render('favorites/success.html.erb')
+    else
+      render('favorites/new.html.erb')
+    end
+  end
 
-  # def show
-  #   @recipe = Recipe.find(params[:id])
-  #   render('recipes/show.html.erb')
-  # end
+  def view
+    @recipes = Recipe.all
+    @tags = Tag.all
+    @favorite = Favorite.new
+    render('favorites/view.html.erb')
+  end
+
+  def show
+    @tag = Tag.find(params[:id])
+    render('favorites/show.html.erb')
+  end
 
   # def destroy
   #   @recipe = Recipe.find(params[:id])

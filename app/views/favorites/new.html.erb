@@ -1,0 +1,24 @@
+<h1> Create a connection</h1>
+
+<%= render('layouts/errors', :object => @favorite) %>
+
+<% if !@recipes.present? %>
+  <h3> Create a recipe <em> BEFORE</em> making a connection.</h3>
+<% end %>
+
+<% if !@tags.present? %>
+  <h3> Create a tag<em> BEFORE</em> making a connection.</h3>
+<% end %>
+
+<form id="favorites" role="form" action="/favorites" method="post">
+  <%=render('form') %>
+  <button class="btn btn-primary">Create connection</button>
+</form>
+<p><a href="/recipes/new" class="btn btn-danger">Create a recipe</a></p>
+<p><a href="/tags/new" class="btn btn-warning">Create a tag</a></p>
+<p><a href="/favorites" class="btn btn-success"> Return to Favorites</a></p>
+
+
+
+
+

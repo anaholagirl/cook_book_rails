@@ -1,0 +1,18 @@
+<div style="padding-bottom:20">
+  Recipe: <select form="favorites" name="favorite[recipe_id]" style="width:100px;margin-right:20px">
+    <% @recipes.each do |recipe| %>
+      <option value="<%=recipe.id %>"> <%= recipe.name %> </option>
+    <% end %>
+  </select>
+
+  Tag: <select name="favorite[tag_id]" style="width:100px;margin-right:20px">
+    <% @tags.each do |tag| %>
+      <option value="<%=tag.id %>"> <%=tag.name %> </option>
+    <% end %>
+  </select>
+</div>
+
+
+
+
+

@@ -16,4 +16,7 @@ Rails.application.routes.draw do
   match('tags/:id', {:via => :delete, :to => 'tags#destroy'})
   match('tags/:id/edit', {:via => :get, :to => 'tags#edit'})
   match('tags/:id', {:via => [:patch, :put], :to => 'tags#update'})
+
+  match('/', {:via => :get, :to => 'favorites#main'})
+  match('favorites', {:via => :get, :to => 'favorites#index'})
 end

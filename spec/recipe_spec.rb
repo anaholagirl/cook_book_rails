@@ -6,5 +6,6 @@ describe Recipe do
   it{ should validate_presence_of :ingredients}
   it{ should validate_presence_of :instructions}
 
-  it{ should has_many :tags}
+  it{ should have_many :favorites }
+  it{ should have_many(:tags).through(:favorites)}
 end

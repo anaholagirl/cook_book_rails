@@ -4,5 +4,6 @@ class Recipe < ActiveRecord::Base
   validates :ingredients, :presence => true
   validates :instructions, :presence => true
 
-  has_many :tags, through: :specialty_foods
+  has_many :favorites
+  has_many :tags, through: :favorites
 end

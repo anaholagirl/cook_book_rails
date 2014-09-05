@@ -1,7 +1,7 @@
-class SpecialtyFoodsController <ApplicationController
+class FavoritesController <ApplicationController
    def index
-    @specialty_foods = Specialty_food.all
-    render('recipes/index.html.erb')
+    @favorites = Favorite.all
+    render('favorites/index.html.erb')
   end
 
   def main
@@ -9,8 +9,8 @@ class SpecialtyFoodsController <ApplicationController
   end
 
   def new
-    @specialty_food = Specialty_food.new
-    render('recipes/new.html.erb')
+    @favorite = Favorite.new
+    render('favorites/new.html.erb')
   end
 
   # def create
